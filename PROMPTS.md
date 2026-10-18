@@ -31,3 +31,7 @@ Create the empty MVVM file structure for the Home screen. Create a home model, a
 ## 5. Favorites MVVM skeleton (Claude, not Cursor)
 Prompt, in the mentor's wording:
 Create the empty MVVM file structure for the Favorites screen. Create a favorites model, a use favorites view model hook and a favorites view. Create only minimal placeholder exports so the application can compile. Do not add Firebase, React state or movie UI.
+
+## 6. Shared Movie types (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Create a shared types folder with a Movie type and an OMDB search response type. The Movie type should contain imdbID, Title, Year, Type and Poster. The OMDB search response type should contain Search (an optional array of Movie), totalResults, Response and an optional Error. Do not add any API requests or functionality.
