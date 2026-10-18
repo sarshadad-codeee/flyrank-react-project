@@ -52,3 +52,7 @@ Implement a custom hook in src/pages/home/useHomeViewModel.ts. Create and export
 Prompt, in the mentor's wording:
 Implement the Home view in src/pages/home/HomeView.tsx. Import and use useHomeViewModel. Display a search input and connect its value to query, updating it with setQuery. Call handleSearch when the search button is clicked. Also allow searching by submitting the form. Display a loading message while loading is true. Display the error message when error exists. Render the movie list using .map. Display the movie title, year, type and poster. Do not call fetch directly. Do not import the home model or the OMDB movie service. Do not implement favorites yet. Do not create a reusable movie card component yet.
 Note: the search input is in the view for now because the header input is not wired up yet.
+
+## 11. Random initial movies in the home model (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Create an initialMovies function inside the home model. Requirements: fetch 20 movies when the home screen opens. Every application launch should display a different selection of movies. Generate the movie list by randomly selecting search keywords from a predefined seed list, for example Batman, Avengers, Harry Potter. Use Promise.all to execute requests in parallel. Merge all results into a single array. Remove duplicate movies using imdbID. Shuffle the final array. Return up to 20 unique movies. Keep all fetching logic inside the home model. Use the existing OMDB movie service. Do not use React hooks. Do not call fetch directly.
