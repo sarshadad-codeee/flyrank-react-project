@@ -35,3 +35,7 @@ Create the empty MVVM file structure for the Favorites screen. Create a favorite
 ## 6. Shared Movie types (Claude, not Cursor)
 Prompt, in the mentor's wording:
 Create a shared types folder with a Movie type and an OMDB search response type. The Movie type should contain imdbID, Title, Year, Type and Poster. The OMDB search response type should contain Search (an optional array of Movie), totalResults, Response and an optional Error. Do not add any API requests or functionality.
+
+## 7. OMDB movie service (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Create an OMDB movie service file at src/services/omdbMovieService.ts. Implement and export an async function searchMovies(query: string). Use the OMDB API. Read the API key from VITE_OMDB_API_KEY and the base URL from VITE_OMDB_API_URL. Encode the search query. Use the Movie and OmdbSearchResponse types. Return the Search array as Movie[]. Throw a readable error when the HTTP request fails. Throw a readable error when OMDB returns Response False. Do not use React hooks. Do not use effects. Do not manage loading or component state.
