@@ -65,3 +65,8 @@ Review decision: added a cancelled flag so a response arriving after the screen 
 ## 13. Movie card component (Claude, not Cursor)
 Prompt, in the mentor's wording:
 Create a reusable MovieCard component at src/components/MovieCard.tsx. Requirements: receive one movie object through props, display the poster, title, year and type, add a Favorite button but do not connect it yet. Use the shared Movie type. Keep the component presentational. Do not call APIs, do not use Firebase, do not manage the movie list. Update the Home view to render MovieCard using .map.
+
+## 14. Fix: Home click does not reload random movies (Claude, not Cursor)
+Prompt, in the mentor's wording:
+When I search for a movie and then press Home, nothing is loaded. It should reload random movies. Fix this bug.
+Review decision: instead of passing an onHomeClick prop to the Header (the mentor's fix), the view model reloads when the router location key changes, so state does not have to be lifted into App.

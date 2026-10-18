@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { getMovies, initialMovies } from './homeModel';
 import type { Movie } from '../../types/movie';
 
 export function useHomeViewModel() {
+  const location = useLocation();
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(false);
@@ -14,6 +16,7 @@ export function useHomeViewModel() {
     async function loadInitialMovies() {
       setLoading(true);
       setError(null);
+      setQuery('');
 
       try {
         const result = await initialMovies();
@@ -36,7 +39,7 @@ export function useHomeViewModel() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [location.key]);
 
   async function handleSearch() {
     setLoading(true);
