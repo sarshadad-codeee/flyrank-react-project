@@ -39,3 +39,7 @@ Create a shared types folder with a Movie type and an OMDB search response type.
 ## 7. OMDB movie service (Claude, not Cursor)
 Prompt, in the mentor's wording:
 Create an OMDB movie service file at src/services/omdbMovieService.ts. Implement and export an async function searchMovies(query: string). Use the OMDB API. Read the API key from VITE_OMDB_API_KEY and the base URL from VITE_OMDB_API_URL. Encode the search query. Use the Movie and OmdbSearchResponse types. Return the Search array as Movie[]. Throw a readable error when the HTTP request fails. Throw a readable error when OMDB returns Response False. Do not use React hooks. Do not use effects. Do not manage loading or component state.
+
+## 8. Home model (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Implement the home model in src/pages/home/homeModel.ts. Import searchMovies from the OMDB movie service. Create and export getMovies(query: string). Responsibility: trim the query, validate that the query contains at least two characters, call searchMovies with the cleaned query, and return the movie list. Do not use React hooks. Do not use useState or useEffect. Do not call fetch directly.
