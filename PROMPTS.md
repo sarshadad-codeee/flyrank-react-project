@@ -16,3 +16,10 @@ Remove all default Vite content, images, styles and demonstration code. Leave a 
 
 Review: deleted src/App.css and src/assets, replaced App.tsx, main.tsx and
 index.css with minimal versions. npm run build passes and the page is blank.
+
+## 3. Header component (Claude, not Cursor)
+Tool note: Cursor agent limit still reached, so Claude generated the code
+and I applied and reviewed it by hand.
+
+Prompt, in the mentor's wording:
+Create a reusable Header component. The header should contain a Home navigation link, a Favorites navigation link, a search input and a search button. Use React Router links for navigation. Only create and display the header. Do not create the Home or Favorites screens yet. Do not connect the search input to any functionality.
