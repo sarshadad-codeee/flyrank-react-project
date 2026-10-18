@@ -7,3 +7,27 @@ body {
   input {
     font-family: inherit;
   }
+
+  main {
+    padding: 16px 24px;
+  }
+  
+  main form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  main ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+  
+  main li img {
+    max-width: 100%;
+    height: auto;
+  }
