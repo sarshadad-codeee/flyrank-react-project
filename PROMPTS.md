@@ -23,3 +23,7 @@ and I applied and reviewed it by hand.
 
 Prompt, in the mentor's wording:
 Create a reusable Header component. The header should contain a Home navigation link, a Favorites navigation link, a search input and a search button. Use React Router links for navigation. Only create and display the header. Do not create the Home or Favorites screens yet. Do not connect the search input to any functionality.
+
+## 4. Home MVVM skeleton (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Create the empty MVVM file structure for the Home screen. Create a home model, a use home view model hook and a home view. The home model will later contain home-specific data and business logic. The home view model will later contain React state and actions. The home view will later render the home interface. Create only minimal placeholder exports so the application can compile. Do not add API requests, React state or movie UI.
