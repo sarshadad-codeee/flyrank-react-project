@@ -56,3 +56,8 @@ Note: the search input is in the view for now because the header input is not wi
 ## 11. Random initial movies in the home model (Claude, not Cursor)
 Prompt, in the mentor's wording:
 Create an initialMovies function inside the home model. Requirements: fetch 20 movies when the home screen opens. Every application launch should display a different selection of movies. Generate the movie list by randomly selecting search keywords from a predefined seed list, for example Batman, Avengers, Harry Potter. Use Promise.all to execute requests in parallel. Merge all results into a single array. Remove duplicate movies using imdbID. Shuffle the final array. Return up to 20 unique movies. Keep all fetching logic inside the home model. Use the existing OMDB movie service. Do not use React hooks. Do not call fetch directly.
+
+## 12. Load initial movies on Home open (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Update the Home view model. Import initialMovies from the home model. Add a useEffect that loads the initial movies when the Home screen opens. Set loading to true while loading, store a readable error if the request fails, and set loading to false when finished. Save the result in the movies state. Do not render JSX. Do not call fetch directly. Do not import the OMDB service directly.
+Review decision: added a cancelled flag so a response arriving after the screen closes (or after React StrictMode's double-run in development) does not update state.

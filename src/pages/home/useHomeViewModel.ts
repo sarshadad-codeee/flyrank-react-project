@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { getMovies } from './homeModel';
+import { useEffect, useState } from 'react';
+import { getMovies, initialMovies } from './homeModel';
 import type { Movie } from '../../types/movie';
 
 export function useHomeViewModel() {
@@ -7,6 +7,36 @@ export function useHomeViewModel() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadInitialMovies() {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const result = await initialMovies();
+        if (!cancelled) {
+          setMovies(result);
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : 'Something went wrong.');
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
+      }
+    }
+
+    loadInitialMovies();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   async function handleSearch() {
     setLoading(true);
