@@ -47,3 +47,8 @@ Implement the home model in src/pages/home/homeModel.ts. Import searchMovies fro
 ## 9. Home view model (Claude, not Cursor)
 Prompt, in the mentor's wording:
 Implement a custom hook in src/pages/home/useHomeViewModel.ts. Create and export useHomeViewModel. Manage these values using useState: query, movies, loading, error. Create a function handleSearch. The function should set loading to true, clear the previous error, call getMovies from the home model using the current query, save the returned movie list in the movies state, and store a readable error if the request fails. Set loading to false when finished. Return query, setQuery, movies, loading, error and handleSearch. Do not render JSX. Do not call fetch directly. Do not import the OMDB service directly.
+
+## 10. Home view (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Implement the Home view in src/pages/home/HomeView.tsx. Import and use useHomeViewModel. Display a search input and connect its value to query, updating it with setQuery. Call handleSearch when the search button is clicked. Also allow searching by submitting the form. Display a loading message while loading is true. Display the error message when error exists. Render the movie list using .map. Display the movie title, year, type and poster. Do not call fetch directly. Do not import the home model or the OMDB movie service. Do not implement favorites yet. Do not create a reusable movie card component yet.
+Note: the search input is in the view for now because the header input is not wired up yet.
