@@ -27,3 +27,7 @@ Create a reusable Header component. The header should contain a Home navigation 
 ## 4. Home MVVM skeleton (Claude, not Cursor)
 Prompt, in the mentor's wording:
 Create the empty MVVM file structure for the Home screen. Create a home model, a use home view model hook and a home view. The home model will later contain home-specific data and business logic. The home view model will later contain React state and actions. The home view will later render the home interface. Create only minimal placeholder exports so the application can compile. Do not add API requests, React state or movie UI.
+
+## 5. Favorites MVVM skeleton (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Create the empty MVVM file structure for the Favorites screen. Create a favorites model, a use favorites view model hook and a favorites view. Create only minimal placeholder exports so the application can compile. Do not add Firebase, React state or movie UI.
