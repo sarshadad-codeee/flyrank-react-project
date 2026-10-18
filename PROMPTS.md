@@ -43,3 +43,7 @@ Create an OMDB movie service file at src/services/omdbMovieService.ts. Implement
 ## 8. Home model (Claude, not Cursor)
 Prompt, in the mentor's wording:
 Implement the home model in src/pages/home/homeModel.ts. Import searchMovies from the OMDB movie service. Create and export getMovies(query: string). Responsibility: trim the query, validate that the query contains at least two characters, call searchMovies with the cleaned query, and return the movie list. Do not use React hooks. Do not use useState or useEffect. Do not call fetch directly.
+
+## 9. Home view model (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Implement a custom hook in src/pages/home/useHomeViewModel.ts. Create and export useHomeViewModel. Manage these values using useState: query, movies, loading, error. Create a function handleSearch. The function should set loading to true, clear the previous error, call getMovies from the home model using the current query, save the returned movie list in the movies state, and store a readable error if the request fails. Set loading to false when finished. Return query, setQuery, movies, loading, error and handleSearch. Do not render JSX. Do not call fetch directly. Do not import the OMDB service directly.
