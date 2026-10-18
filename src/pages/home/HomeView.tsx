@@ -1,4 +1,5 @@
 import { useHomeViewModel } from './useHomeViewModel';
+import MovieCard from '../../components/MovieCard';
 
 function HomeView() {
   const { query, setQuery, movies, loading, error, handleSearch } =
@@ -28,13 +29,7 @@ function HomeView() {
       <ul>
         {movies.map((movie) => (
           <li key={movie.imdbID}>
-            {movie.Poster !== 'N/A' && (
-              <img src={movie.Poster} alt={`Poster of ${movie.Title}`} width="120" />
-            )}
-            <h2>{movie.Title}</h2>
-            <p>
-              {movie.Year} - {movie.Type}
-            </p>
+            <MovieCard movie={movie} />
           </li>
         ))}
       </ul>

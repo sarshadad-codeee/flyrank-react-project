@@ -61,3 +61,7 @@ Create an initialMovies function inside the home model. Requirements: fetch 20 m
 Prompt, in the mentor's wording:
 Update the Home view model. Import initialMovies from the home model. Add a useEffect that loads the initial movies when the Home screen opens. Set loading to true while loading, store a readable error if the request fails, and set loading to false when finished. Save the result in the movies state. Do not render JSX. Do not call fetch directly. Do not import the OMDB service directly.
 Review decision: added a cancelled flag so a response arriving after the screen closes (or after React StrictMode's double-run in development) does not update state.
+
+## 13. Movie card component (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Create a reusable MovieCard component at src/components/MovieCard.tsx. Requirements: receive one movie object through props, display the poster, title, year and type, add a Favorite button but do not connect it yet. Use the shared Movie type. Keep the component presentational. Do not call APIs, do not use Firebase, do not manage the movie list. Update the Home view to render MovieCard using .map.
