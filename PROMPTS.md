@@ -89,3 +89,8 @@ Review decision: followed the mentor's order, so favorites are stored globally u
 ## 17. Favorites model (Claude, not Cursor)
 Prompt, in the mentor's wording:
 Implement the favorites model in src/pages/favorites/favoritesModel.ts. Import the Firebase service functions. Create and export loadFavorites, saveFavorite and deleteFavorite. Requirements: act as a wrapper around the Firebase service. Do not call Firebase directly outside the service. Do not use React hooks. Do not manage loading or error state.
+
+## 18. Favorites view model (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Implement a custom hook in src/pages/favorites/useFavoritesViewModel.ts. Create and export useFavoritesViewModel. Manage with useState: favorites, loading and error. Create functions loadMovies and removeMovie. Requirements: use the favorites model only. Load favorites when the screen opens, using useEffect. Update local state after a movie is removed. Return all data and actions required by the favorites view. Do not render JSX. Do not import the Firebase service.
+Review decision: loadMovies is wrapped in useCallback so the useEffect dependency list is correct and does not cause a re-render loop.
