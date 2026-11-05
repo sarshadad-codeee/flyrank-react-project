@@ -123,3 +123,8 @@ Review note: register and login throw synchronously on invalid input, because th
 Prompt, in the mentor's wording:
 Implement a custom hook in src/pages/auth/useAuthViewModel.ts. Create and export useAuthViewModel. Manage these values using useState: email, password, mode, loading, error. Create functions handleSubmit and toggleMode. handleSubmit should call login from the auth model when mode is login, and register when mode is register. Clear the previous error before submitting. Manage the loading state. Store readable errors. Clear the password after a successful submit. Return all state and functions needed by the auth view. Do not render JSX. Do not call Firebase directly. Do not import the auth service directly.
 Review decision: toggleMode also clears the error, so a message from one mode does not carry over to the other.
+
+## 25. Auth view (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Implement the Auth view in src/pages/auth/AuthView.tsx. Requirements: use useAuthViewModel. Display either Login or Create account based on the current mode. Add a controlled email input and a controlled password input. Add a submit button that is disabled while loading. Display readable validation or Firebase errors. Add a button for switching between login and registration. Submit the form using onSubmit and prevent the default browser form submission. Do not call Firebase directly. Do not import the auth model or auth service.
+Review decision: added labels, autoComplete attributes and role="alert" on the error, following the accessibility rule from the capstone project.
