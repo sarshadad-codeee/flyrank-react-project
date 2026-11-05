@@ -70,3 +70,13 @@ Create a reusable MovieCard component at src/components/MovieCard.tsx. Requireme
 Prompt, in the mentor's wording:
 When I search for a movie and then press Home, nothing is loaded. It should reload random movies. Fix this bug.
 Review decision: instead of passing an onHomeClick prop to the Header (the mentor's fix), the view model reloads when the router location key changes, so state does not have to be lifted into App.
+
+## 15. Firebase service (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Create and configure Firebase for the application. Create src/services/firebaseService.ts. Requirements: initialize Firebase using environment variables and export the database instance. Do not save or load any favorites yet. Do not modify the Home view. Do not add authentication right now.
+Note: .env.example lists the variable names with empty values so the project can be set up on another machine.
+
+## 15. Firebase service (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Create and configure Firebase for the application. Create src/services/firebaseService.ts. Requirements: initialize Firebase using environment variables and export the database instance. Do not save or load any favorites yet. Do not modify the Home view. Do not add authentication right now.
+Note: .env.example lists the variable names with empty values so the project can be set up on another machine.
