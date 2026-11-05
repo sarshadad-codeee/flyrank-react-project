@@ -118,3 +118,8 @@ Create authModel, useAuthViewModel and AuthView files in src/pages/auth. Require
 Prompt, in the mentor's wording:
 Implement the auth model in src/pages/auth/authModel.ts. Import the auth service functions. Create and export register, login and logout. Responsibilities: trim and normalize the email address, validate that the email and password are not empty, validate that the password contains at least six characters, call the corresponding auth service function, return the Firebase user. Do not use React hooks. Do not call Firebase directly.
 Review note: register and login throw synchronously on invalid input, because they are not async functions. The view model must call them inside try/catch with await, which covers both cases.
+
+## 24. Auth view model (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Implement a custom hook in src/pages/auth/useAuthViewModel.ts. Create and export useAuthViewModel. Manage these values using useState: email, password, mode, loading, error. Create functions handleSubmit and toggleMode. handleSubmit should call login from the auth model when mode is login, and register when mode is register. Clear the previous error before submitting. Manage the loading state. Store readable errors. Clear the password after a successful submit. Return all state and functions needed by the auth view. Do not render JSX. Do not call Firebase directly. Do not import the auth service directly.
+Review decision: toggleMode also clears the error, so a message from one mode does not carry over to the other.
