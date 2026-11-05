@@ -16,3 +16,15 @@ src/index.css with padding, a flex search form and a grid for the list.
 Found in the browser: "Search movies" appears twice, once in the header
 (not wired up) and once in the Home view. To be fixed when the header is
 connected.
+
+## 4. homeModel.ts lost initialMovies on disk (restored from commit 91261cf)
+Found by reading git diff before committing: the working copy had lost
+SEED_KEYWORDS, shuffle and initialMovies, which would have broken the Home
+screen. Cause unknown (not part of any prompt). Fixed with git restore and
+confirmed with npm run build.
+
+## 4. homeModel.ts lost initialMovies on disk (restored from commit 91261cf)
+Found by reading git diff before committing: the working copy had lost
+SEED_KEYWORDS, shuffle and initialMovies, which would have broken the Home
+screen. Cause unknown (not part of any prompt). Fixed with git restore and
+confirmed with npm run build.
