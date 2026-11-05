@@ -109,3 +109,7 @@ Review decision: added a notice message so the user sees whether the save worked
 Prompt, in the mentor's wording:
 Implement and export these functions in src/services/authService.ts: registerUser, loginUser, logoutUser, subscribeToAuthChanges. Requirements: use Firebase Authentication. Use createUserWithEmailAndPassword for registration. Use signInWithEmailAndPassword for login. Use signOut for logout. Use onAuthStateChanged. Return the type User from Firebase. Convert Firebase errors into readable messages. Do not use React hooks. Do not use JSX.
 Review decision: auth is created in firebaseService.ts and imported by authService.ts, so the app is initialized only once.
+
+## 22. Auth MVVM skeleton (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Create authModel, useAuthViewModel and AuthView files in src/pages/auth. Requirements: add minimal placeholder exports. Ensure the application still compiles. Do not implement registration or login yet. Do not add routing yet.
