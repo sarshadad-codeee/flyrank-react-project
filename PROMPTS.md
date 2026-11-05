@@ -113,3 +113,8 @@ Review decision: auth is created in firebaseService.ts and imported by authServi
 ## 22. Auth MVVM skeleton (Claude, not Cursor)
 Prompt, in the mentor's wording:
 Create authModel, useAuthViewModel and AuthView files in src/pages/auth. Requirements: add minimal placeholder exports. Ensure the application still compiles. Do not implement registration or login yet. Do not add routing yet.
+
+## 23. Auth model (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Implement the auth model in src/pages/auth/authModel.ts. Import the auth service functions. Create and export register, login and logout. Responsibilities: trim and normalize the email address, validate that the email and password are not empty, validate that the password contains at least six characters, call the corresponding auth service function, return the Firebase user. Do not use React hooks. Do not call Firebase directly.
+Review note: register and login throw synchronously on invalid input, because they are not async functions. The view model must call them inside try/catch with await, which covers both cases.
