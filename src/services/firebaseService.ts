@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 import { get, getDatabase, ref, remove, set } from 'firebase/database';
 import type { Movie } from '../types/movie';
 
@@ -19,6 +20,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const database = getDatabase(app);
+export const auth = getAuth(app);
 
 export async function addFavoriteMovie(movie: Movie): Promise<void> {
   try {
@@ -47,3 +49,4 @@ export async function getFavorites(): Promise<Movie[]> {
     throw new Error('Could not load favorites. Please try again.');
   }
 }
+

@@ -104,3 +104,8 @@ Review decision: MovieCard got optional actionLabel and onAction props, and an a
 Prompt, in the mentor's wording:
 Connect the Favorite button on the Home screen. When the button is clicked, save the movie to favorites through the favorites model. Add a handleFavorite function to the Home view model. Do not call Firebase directly. Do not import the Firebase service in the Home view.
 Review decision: added a notice message so the user sees whether the save worked.
+
+## 21. Auth service (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Implement and export these functions in src/services/authService.ts: registerUser, loginUser, logoutUser, subscribeToAuthChanges. Requirements: use Firebase Authentication. Use createUserWithEmailAndPassword for registration. Use signInWithEmailAndPassword for login. Use signOut for logout. Use onAuthStateChanged. Return the type User from Firebase. Convert Firebase errors into readable messages. Do not use React hooks. Do not use JSX.
+Review decision: auth is created in firebaseService.ts and imported by authService.ts, so the app is initialized only once.
