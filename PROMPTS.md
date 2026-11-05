@@ -94,3 +94,8 @@ Implement the favorites model in src/pages/favorites/favoritesModel.ts. Import t
 Prompt, in the mentor's wording:
 Implement a custom hook in src/pages/favorites/useFavoritesViewModel.ts. Create and export useFavoritesViewModel. Manage with useState: favorites, loading and error. Create functions loadMovies and removeMovie. Requirements: use the favorites model only. Load favorites when the screen opens, using useEffect. Update local state after a movie is removed. Return all data and actions required by the favorites view. Do not render JSX. Do not import the Firebase service.
 Review decision: loadMovies is wrapped in useCallback so the useEffect dependency list is correct and does not cause a re-render loop.
+
+## 19. Favorites view (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Implement the Favorites view in src/pages/favorites/FavoritesView.tsx. Requirements: use useFavoritesViewModel. Display a loading message while loading. Display an error message when an error exists. Render favorites using MovieCard and .map. Show a friendly empty message when there are no favorites. Allow removing a movie from favorites. Do not call Firebase directly. Do not import the favorites model directly.
+Review decision: MovieCard got optional actionLabel and onAction props, and an aria-label that includes the movie title, so screen readers do not hear many identical buttons.

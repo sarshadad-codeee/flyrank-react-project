@@ -3,9 +3,15 @@ import './MovieCard.css';
 
 interface MovieCardProps {
   movie: Movie;
+  actionLabel?: string;
+  onAction?: (movie: Movie) => void;
 }
 
-function MovieCard({ movie }: MovieCardProps) {
+function MovieCard({
+  movie,
+  actionLabel = 'Favorite',
+  onAction,
+}: MovieCardProps) {
   return (
     <article className="movie-card">
       {movie.Poster !== 'N/A' && (
@@ -15,7 +21,13 @@ function MovieCard({ movie }: MovieCardProps) {
       <p>
         {movie.Year} - {movie.Type}
       </p>
-      <button type="button">Favorite</button>
+      <button
+        type="button"
+        aria-label={`${actionLabel}: ${movie.Title}`}
+        onClick={() => onAction?.(movie)}
+      >
+        {actionLabel}
+      </button>
     </article>
   );
 }
