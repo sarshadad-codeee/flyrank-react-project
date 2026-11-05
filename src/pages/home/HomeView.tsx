@@ -2,8 +2,16 @@ import { useHomeViewModel } from './useHomeViewModel';
 import MovieCard from '../../components/MovieCard';
 
 function HomeView() {
-  const { query, setQuery, movies, loading, error, handleSearch } =
-    useHomeViewModel();
+  const {
+    query,
+    setQuery,
+    movies,
+    loading,
+    error,
+    notice,
+    handleSearch,
+    handleFavorite,
+  } = useHomeViewModel();
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -25,11 +33,12 @@ function HomeView() {
 
       {loading && <p>Loading...</p>}
       {error && <p role="alert">{error}</p>}
+      {notice && <p role="status">{notice}</p>}
 
       <ul>
         {movies.map((movie) => (
           <li key={movie.imdbID}>
-            <MovieCard movie={movie} />
+            <MovieCard movie={movie} onAction={handleFavorite} />
           </li>
         ))}
       </ul>
@@ -38,3 +47,4 @@ function HomeView() {
 }
 
 export default HomeView;
+

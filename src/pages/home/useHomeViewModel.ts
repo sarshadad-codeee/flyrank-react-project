@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getMovies, initialMovies } from './homeModel';
+import { saveFavorite } from '../favorites/favoritesModel';
 import type { Movie } from '../../types/movie';
 
 export function useHomeViewModel() {
@@ -9,6 +10,7 @@ export function useHomeViewModel() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -55,5 +57,26 @@ export function useHomeViewModel() {
     }
   }
 
-  return { query, setQuery, movies, loading, error, handleSearch };
+  async function handleFavorite(movie: Movie) {
+    setNotice(null);
+
+    try {
+      await saveFavorite(movie);
+      setNotice(`Added ${movie.Title} to favorites.`);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong.');
+    }
+  }
+
+  return {
+    query,
+    setQuery,
+    movies,
+    loading,
+    error,
+    notice,
+    handleSearch,
+    handleFavorite,
+  };
 }
+

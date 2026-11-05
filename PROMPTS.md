@@ -99,3 +99,8 @@ Review decision: loadMovies is wrapped in useCallback so the useEffect dependenc
 Prompt, in the mentor's wording:
 Implement the Favorites view in src/pages/favorites/FavoritesView.tsx. Requirements: use useFavoritesViewModel. Display a loading message while loading. Display an error message when an error exists. Render favorites using MovieCard and .map. Show a friendly empty message when there are no favorites. Allow removing a movie from favorites. Do not call Firebase directly. Do not import the favorites model directly.
 Review decision: MovieCard got optional actionLabel and onAction props, and an aria-label that includes the movie title, so screen readers do not hear many identical buttons.
+
+## 20. Wire the Favorite button on Home (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Connect the Favorite button on the Home screen. When the button is clicked, save the movie to favorites through the favorites model. Add a handleFavorite function to the Home view model. Do not call Firebase directly. Do not import the Firebase service in the Home view.
+Review decision: added a notice message so the user sees whether the save worked.
