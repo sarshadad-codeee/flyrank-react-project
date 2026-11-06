@@ -76,11 +76,6 @@ Prompt, in the mentor's wording:
 Create and configure Firebase for the application. Create src/services/firebaseService.ts. Requirements: initialize Firebase using environment variables and export the database instance. Do not save or load any favorites yet. Do not modify the Home view. Do not add authentication right now.
 Note: .env.example lists the variable names with empty values so the project can be set up on another machine.
 
-## 15. Firebase service (Claude, not Cursor)
-Prompt, in the mentor's wording:
-Create and configure Firebase for the application. Create src/services/firebaseService.ts. Requirements: initialize Firebase using environment variables and export the database instance. Do not save or load any favorites yet. Do not modify the Home view. Do not add authentication right now.
-Note: .env.example lists the variable names with empty values so the project can be set up on another machine.
-
 ## 16. Favorites functions in the Firebase service (Claude, not Cursor)
 Prompt, in the mentor's wording:
 Inside src/services/firebaseService.ts add functions for managing favorite movies. Create addFavoriteMovie, removeFavoriteMovie and getFavorites. Requirements: use imdbID as the unique movie identifier. Keep all Firebase communication inside the service. Return typed data. Throw readable errors when operations fail. Do not use React hooks. Do not update the UI yet.
