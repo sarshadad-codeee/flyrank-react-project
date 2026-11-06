@@ -128,3 +128,8 @@ Review decision: toggleMode also clears the error, so a message from one mode do
 Prompt, in the mentor's wording:
 Implement the Auth view in src/pages/auth/AuthView.tsx. Requirements: use useAuthViewModel. Display either Login or Create account based on the current mode. Add a controlled email input and a controlled password input. Add a submit button that is disabled while loading. Display readable validation or Firebase errors. Add a button for switching between login and registration. Submit the form using onSubmit and prevent the default browser form submission. Do not call Firebase directly. Do not import the auth model or auth service.
 Review decision: added labels, autoComplete attributes and role="alert" on the error, following the accessibility rule from the capstone project.
+
+## 26. Auth context (Claude, not Cursor)
+Prompt, in the mentor's wording:
+Create src/context/AuthContext.tsx. Requirements: use subscribeToAuthChanges through the auth service. Store the current Firebase user. Store an authLoading state while Firebase restores the session. Expose user, authLoading and logOut. Wrap the application with the provider. Unsubscribe from the authentication listener when the provider unmounts. Show a loading state while authentication is being initialized. Do not add favorites logic.
+Review decision: split into authContext.ts (context and useAuth hook) and AuthProvider.tsx (provider component), so each file exports only one kind of thing and Fast Refresh keeps working.
