@@ -1,32 +1,33 @@
-# React + TypeScript + Vite
+# Movie Browser
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A small movie browser built with React, TypeScript and Vite. Movie data comes
+from the OMDB API. Favorites are stored in Firebase Realtime Database.
 
-Currently, two official plugins are available:
+## Features
+- Search movies by title (minimum two characters).
+- Random selection of movies on the Home screen, reloaded on each visit.
+- Save movies to Favorites and remove them again.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Structure
+- src/pages/<screen>: model (logic), view model (state and actions), view (UI)
+- src/services: OMDB, Firebase and authentication services
+- src/components: shared UI such as Header and MovieCard
+- src/context: authentication context
+- src/types: shared types
 
-## React Compiler
+## Setup
+1. Install dependencies: npm install
+2. Copy .env.example to .env and fill in your own OMDB and Firebase values.
+3. Start the app: npm run dev (opens at http://localhost:5173)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Scripts
+- npm run dev: start the development server
+- npm run build: type-check and build
+- npm run lint: run oxlint
+- npm run preview: preview the build
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Notes
+- The .env file is git-ignored and must never be committed.
+- Firebase Realtime Database is in test mode, so its data is open to anyone
+  with the database URL. Do not store anything private in it.
+- Login and registration code exists, but the sign-in screen is not routed yet.
